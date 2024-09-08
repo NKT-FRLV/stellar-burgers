@@ -28,11 +28,9 @@ import { ProtectedRoute } from '../protected-route';
 const App = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const goBack = () => navigate(-1);
   const location = useLocation();
   const backgroundLocation = location.state?.background;
-
-  console.log(location);
+  const goBack = () => navigate(-1);
 
   useEffect(() => {
     dispatch(getAllIngredients());
