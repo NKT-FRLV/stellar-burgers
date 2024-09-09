@@ -6,7 +6,11 @@ import { TIngredient } from '@utils-types';
 import { useSelector, useDispatch } from '../../services/store';
 import { getOrderByNumber } from '../../services/feedsSlice';
 
-export const OrderInfo: FC = () => {
+interface TOrderInfoProps {
+  title?: boolean;
+}
+
+export const OrderInfo: FC<TOrderInfoProps> = (props) => {
   const dispatch = useDispatch();
   const number = Number(useParams().id);
   useEffect(() => {
@@ -61,6 +65,10 @@ export const OrderInfo: FC = () => {
 
   if (!orderInfo) {
     return <Preloader />;
+  }
+
+  if (props.title) {
+    return <OrderInfoUI title={`#${number}`} orderInfo={orderInfo} />;
   }
 
   return <OrderInfoUI orderInfo={orderInfo} />;

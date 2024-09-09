@@ -43,9 +43,12 @@ const App = () => {
       <Routes location={backgroundLocation || location}>
         {/* Не защищённые маршруты */}
         <Route path='/' element={<ConstructorPage />} />
-        <Route path='/ingredients/:id' element={<IngredientDetails />} />
+        <Route
+          path='/ingredients/:id'
+          element={<IngredientDetails title='Детали ингредиента' />}
+        />
         <Route path='/feed' element={<Feed />} />
-        <Route path='/feed/:id' element={<OrderInfo />} />
+        <Route path='/feed/:id' element={<OrderInfo title />} />
         {/* Защищённые маршруты */}
         <Route
           path='/profile'
@@ -64,10 +67,10 @@ const App = () => {
           }
         />
         <Route
-          path='/profile/orders/:number'
+          path='/profile/orders/:id'
           element={
             <ProtectedRoute>
-              <OrderInfo />
+              <OrderInfo title />
             </ProtectedRoute>
           }
         />
@@ -127,18 +130,18 @@ const App = () => {
             element={
               <Modal
                 children={<OrderInfo />}
-                title={`Заказ #${location.pathname.split('/')[2]}`}
+                title={`#${location.pathname.split('/')[2]}`}
                 onClose={goBack}
               />
             }
           />
           <Route
-            path='/profile/orders/:number'
+            path='/profile/orders/:id'
             element={
               <ProtectedRoute>
                 <Modal
                   children={<OrderInfo />}
-                  title={`Заказ #${location.pathname.split('/')[2]}`}
+                  title={`#${location.pathname.split('/')[3]}`}
                   onClose={goBack}
                 />
               </ProtectedRoute>

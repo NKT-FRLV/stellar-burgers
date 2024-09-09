@@ -71,7 +71,6 @@ export const logoutUser = createAsyncThunk(
         deleteCookie('accessToken');
         localStorage.removeItem('refreshToken');
         dispatch(setUser(null));
-        // dispatch(setIsAuthChecked(false));
       })
       .catch((err) => console.log(err));
   }
@@ -103,7 +102,7 @@ export const userSlice = createSlice({
     builder
       .addCase(registerUser.pending, (state) => {
         state.success = false;
-        state.isAuthChecked = false;
+        // state.isAuthChecked = false;
       })
       .addCase(registerUser.rejected, (state, action) => {
         state.success = false;
@@ -119,7 +118,9 @@ export const userSlice = createSlice({
       })
       .addCase(loginUser.pending, (state) => {
         state.success = false;
-        state.isAuthChecked = false;
+        // не снимаю статус чекнутого юзера,
+        // что бы не показывать прелодер при каждом запросе и не перерендеревать компоненты.
+        // state.isAuthChecked = false;
         state.error = '';
       })
       .addCase(loginUser.rejected, (state, action) => {

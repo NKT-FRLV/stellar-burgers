@@ -4,15 +4,7 @@ import { getIngredientsApi } from '../utils/burger-api';
 
 export const getAllIngredients = createAsyncThunk(
   'ingredientData/getAllIngredients',
-  async () => {
-    try {
-      const ingredients = await getIngredientsApi();
-      return ingredients;
-    } catch (error) {
-      console.log(error);
-      throw new Error('Не удалось загрузить ингредиенты');
-    }
-  }
+  async () => await getIngredientsApi()
 );
 
 interface TIngredientsState {

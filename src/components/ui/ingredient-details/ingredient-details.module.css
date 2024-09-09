@@ -7,6 +7,13 @@
   width: 520px;
 }
 
+.title {
+  font-family: JetBrains Mono, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
 .nutritional_values {
   display: flex;
   justify-content: space-between;

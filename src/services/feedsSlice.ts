@@ -1,10 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { TOrder } from '../utils/types';
-import {
-  getOrdersApi,
-  getOrderByNumberApi,
-  getFeedsApi
-} from '../utils/burger-api';
+import { getOrderByNumberApi, getFeedsApi } from '../utils/burger-api';
 
 type TFeedState = {
   orders: TOrder[];

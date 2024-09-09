@@ -1,15 +1,18 @@
 import { ProfileOrdersUI } from '@ui-pages';
 import { TOrder } from '@utils-types';
-import { FC } from 'react';
-import { useSelector } from '../../services/store';
+import { FC, useEffect } from 'react';
+import { useSelector, useDispatch } from '../../services/store';
+import { getFeeds } from '../../services/feedsSlice';
 
 export const ProfileOrders: FC = () => {
+  const dispatch = useDispatch();
   /** TODO: взять переменную из стора */
-  /* ТУТ СКОРЕЕ ВСЕГО НАДО НЕ ИЗ feeds  ПОЛУЧАТЬ ЗАКАЗЫ А ИЗ УЖЕ ЗАКАЗОВ НАСТОЯЩИХ */
-
-  // const { orders, isLoading, totalToday, total } = useSelector((store) => store.feedsData);
-
-  const orders: TOrder[] = [];
+  const { orders } = useSelector((store) => store.feedsData);
+  useEffect(() => {
+    if (!orders || orders.length === 0) {
+      dispatch(getFeeds());
+    }
+  }, []);
 
   return <ProfileOrdersUI orders={orders} />;
 };

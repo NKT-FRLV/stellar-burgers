@@ -4,7 +4,11 @@ import { IngredientDetailsUI } from '../ui/ingredient-details';
 import { useSelector } from '../../services/store';
 import { useParams } from 'react-router-dom';
 
-export const IngredientDetails: FC = () => {
+interface TIngredientProps {
+  title?: string;
+}
+
+export const IngredientDetails: FC<TIngredientProps> = (props) => {
   const { id } = useParams();
   const ingredients = useSelector((state) => state.ingredientData.ingredients);
   const ingredientData = ingredients.find((i) => i._id === id) || null;
@@ -16,5 +20,5 @@ export const IngredientDetails: FC = () => {
     return <Preloader />;
   }
 
-  return <IngredientDetailsUI ingredientData={ingredientData} />;
+  return <IngredientDetailsUI {...props} ingredientData={ingredientData} />;
 };

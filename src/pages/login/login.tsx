@@ -8,16 +8,12 @@ export const Login: FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
-  // const location = useLocation();
-  // const from = location.state?.from?.pathname || '/';
 
-  // useEffect(()=> {
-  //   dispatch(clearUser())
-  // },[dispatch])
+  useEffect(() => {
+    dispatch(resetError());
+  }, []);
 
-  const { isAuthChecked, error, user } = useSelector((state) => state.userData);
-
-  console.log(error, user);
+  const error = useSelector((state) => state.userData.error);
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
