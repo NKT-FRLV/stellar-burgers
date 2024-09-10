@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { TUser } from '../utils/types';
+import { TUser, TOrder } from '../utils/types';
 import {
   getUserApi,
   registerUserApi,
@@ -7,22 +7,27 @@ import {
   loginUserApi,
   TLoginData,
   logoutApi,
-  updateUserApi
+  updateUserApi,
+  getOrdersApi
 } from '../utils/burger-api';
 import { setCookie, getCookie, deleteCookie } from '../utils/cookie';
 
 type TUserState = {
   isAuthChecked: boolean;
   error: string;
+  request: boolean;
   success: boolean;
   user: TUser | null;
+  userOrders: TOrder[];
 };
 
 const initialState: TUserState = {
   isAuthChecked: false,
   error: '',
+  request: false,
   success: false,
-  user: null
+  user: null,
+  userOrders: []
 };
 
 export const getUser = createAsyncThunk(
@@ -79,6 +84,11 @@ export const logoutUser = createAsyncThunk(
 export const updateUser = createAsyncThunk(
   'user/updateUser',
   async (data: TRegisterData) => await updateUserApi(data)
+);
+
+export const getUserOrders = createAsyncThunk(
+  'user/userOrders',
+  async () => await getOrdersApi()
 );
 
 export const userSlice = createSlice({
@@ -155,6 +165,19 @@ export const userSlice = createSlice({
         state.error = action.payload.success
           ? ''
           : 'Не удалось обновить данные.';
+      })
+      .addCase(getUserOrders.rejected, (state, action) => {
+        state.error = action.error.message as string;
+        state.userOrders = [];
+        state.request = false;
+      })
+      .addCase(getUserOrders.pending, (state) => {
+        state.request = true;
+      })
+      .addCase(getUserOrders.fulfilled, (state, action) => {
+        state.userOrders = action.payload;
+        state.request = false;
+        state.error = '';
       });
   }
 });
