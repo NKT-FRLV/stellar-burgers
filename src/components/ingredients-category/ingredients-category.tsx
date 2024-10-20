@@ -9,7 +9,6 @@ export const IngredientsCategory = forwardRef<
   HTMLUListElement,
   TIngredientsCategoryProps
 >(({ title, titleRef, ingredients, ...rest }, ref) => {
-
   const burgerConstructor = useSelector(
     (state) => state.constructorBurger.constructorItems
   );

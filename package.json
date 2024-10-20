@@ -126,6 +126,12 @@
     ],
     "collectCoverage": true,
     "coverageDirectory": "coverage",
-    "coverageProvider": "v8"
+    "coverageProvider": "v8",
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}", 
+      "!**/node_modules/**",      
+      "!**/vendor/**"   
+    ],
+    "coverageReporters": ["html", "text-summary"]
   }
 }

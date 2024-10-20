@@ -1,20 +1,5 @@
 {
     "success": true,
-    "orders": [
-        {
-            "_id": "20",
-            "ingredients": [
-                "643d69a5c3f7b9001cfa093d",
-                "643d69a5c3f7b9001cfa093e",
-                "643d69a5c3f7b9001cfa093d"
-            ],
-            "owner": "66cf307e119d45001b502940",
-            "status": "done",
-            "name": "Название Бургера",
-            "createdAt": "2024-09-02T08:05:33.959Z",
-            "updatedAt": "2024-09-02T08:05:34.498Z",
-            "number": 51829,
-            "__v": 0
-        }
-    ]
+    "order": { "number": 3000 },
+    "name": "Название Бургера"
 }

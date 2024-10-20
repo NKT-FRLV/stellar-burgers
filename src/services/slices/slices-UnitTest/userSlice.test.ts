@@ -147,7 +147,6 @@ describe('[userSlice]', () => {
       )
     );
     const { isAuthChecked, error } = store.getState().user;
-    console.log(error);
     expect(isAuthChecked).toBe(true);
     expect(error).toEqual(expect.any(String));
   });
