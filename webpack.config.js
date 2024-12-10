@@ -39,11 +39,17 @@ module.exports = {
       },
       {
         test: /\.(jpg|jpeg|png|svg)$/,
-        type: 'asset/resource'
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[hash][ext][query]' // Сохраняет изображения в `dist/images`
+        }
       },
       {
         test: /\.(woff|woff2)$/,
-        type: 'asset/resource'
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[hash][ext][query]' // Сохраняет шрифты в `dist/fonts`
+        }
       }
     ]
   },
@@ -83,7 +89,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    clean: true // Очистка папки `dist` перед каждой сборкой
   },
   devServer: {
     static: path.join(__dirname, './dist'),
