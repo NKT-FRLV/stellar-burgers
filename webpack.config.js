@@ -90,6 +90,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js',
+    publicPath: '/',
     clean: true // Очистка папки `dist` перед каждой сборкой
   },
   devServer: {
