@@ -72,10 +72,10 @@ Try the Full Experience! 🌟
 Stellar Burgers is more than just a burger builder—it’s an interactive, futuristic experience! 💫🔥
 
 ## **Author**  
-👨‍💻 **Developed by [Nikita Frolov](https://github.com/nkt-frlv)**  
+👨‍💻 **Developed by [Nikita Frolov]((https://github.com/mi-viejo-amigo)**  
 
 📩 **Contact me:**  
-- **GitHub:** [nkt-frlv]((https://github.com/mi-viejo-amigo))  
+- **GitHub:** [nkt-frlv](https://github.com/mi-viejo-amigo)  
 - **LinkedIn:** [LinkedIn Profile](www.linkedin.com/in/nktfrlv)  
 - **Email:** [Letter me](nkt.frlv7@yandex.ru)  
 
