@@ -75,7 +75,7 @@ Stellar Burgers is more than just a burger builder—it’s an interactive, futu
 👨‍💻 **Developed by [Nikita Frolov](https://github.com/nkt-frlv)**  
 
 📩 **Contact me:**  
-- **GitHub:** [nkt-frlv](https://github.com/nkt-frlv)  
+- **GitHub:** [nkt-frlv]((https://github.com/mi-viejo-amigo))  
 - **LinkedIn:** [LinkedIn Profile](www.linkedin.com/in/nktfrlv)  
 - **Email:** [Letter me](nkt.frlv7@yandex.ru)  
 
