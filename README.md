@@ -1,19 +1,81 @@
-# Проектная работа 11-го спринта
+# 🍔 Stellar Burgers – Cosmic Burger Builder 🚀  
 
-[Макет](<https://www.figma.com/file/vIywAvqfkOIRWGOkfOnReY/React-Fullstack_-Проектные-задачи-(3-месяца)_external_link?type=design&node-id=0-1&mode=design>)
+## **Project Overview**  
+**Stellar Burgers** is a **single-page application (SPA)** designed as a futuristic online **burger builder** with a **cosmic theme**. Users can **register, log in, customize their burgers, place orders, track their order history, and explore the live order feed from other users**.  
 
-[Чеклист](https://www.notion.so/praktikum/0527c10b723d4873aa75686bad54b32e?pvs=4)
+🔗 **[Live Demo](https://stellar-burgers-mypxo6d30-mi-viejo-amigos-projects.vercel.app/)**  
 
-## Этапы работы:
+---
 
-1. Разверните проект и ознакомьтесь с кодом. Все необходимые вам компоненты уже созданы и лежат в папке `src/components`
+## **Tech Stack & Libraries**  
+### **Development:**  
+- **HTML, CSS, TypeScript**  
+- **React, React Router**  
+- **Redux Toolkit**  
 
-2. Настройте роутинг.
+### **Testing:**  
+- **Jest** for unit tests  
+- **Cypress** for end-to-end testing  
 
-3. Напишите функционал запросов данных с сервера, используя `Redux` и глобальный `store`. Сами "ручки" уже прописаны и лежат в `utils/burger-api.ts`
+---
 
-4. Настройте авторизацию и создайте защищённые роуты.
+## **Project Structure**  
+The application consists of three main sections:  
+✅ **Burger Constructor** – Drag & drop ingredients to build your dream burger 🍔  
+✅ **Order Feed** – View real-time orders from all users 📡  
+✅ **Personal Account** – Manage profile, view order history, and update personal data 🔐  
 
-## Важно:
+---
 
-Для корректной работы запросов к серверу необходимо добавить переменную BURGER_API_URL в окружение. Сама ссылка находится в файле `.env.example`.
+## **Core Features**  
+- **View detailed ingredient descriptions** in a modal window 🧑‍🍳  
+- **Add and remove ingredients** in the burger builder 🍞🥩🥬  
+- **Submit orders** and receive a unique order number 🔢  
+- **User registration & authentication** with email and password ✉️🔑  
+- **Password recovery** via email 🔄  
+- **Modify personal details** in the profile settings 🛠️  
+- **Track order history** and live order feed from other users 📊  
+- **View real-time order statuses** – "Done", "In Progress", "Total Completed" 📌  
+
+---
+
+## **Key Functionalities Implemented**  
+### **Frontend Development**  
+✅ **Fully configured routing** using **React Router** 🏎️  
+✅ **Protected routes** for authorized users only 🔐  
+✅ **Correct data handling in modals** when opened via direct URL 🔍  
+✅ **Global state management** using **Redux Toolkit**, structured into entity-based slices 🎛️  
+✅ **Drag & drop ingredient management** 🖱️  
+✅ **Loading indicators** for API requests ⏳  
+✅ **JWT-based authentication** with `accessToken` & `refreshToken` 🔑  
+
+### **Testing & Validation**  
+✅ **Jest Unit Tests** – Covers reducers, async API calls, and error handling (36 tests) 🧪  
+✅ **Cypress Integration Tests** – Simulates the burger-building flow and order placement (8 tests) 🏗️  
+✅ **API request interception** with mock responses for testing 🎭  
+
+---
+
+## **Installation & Setup**  
+
+### **1️⃣ Install dependencies and start the app**  
+```bash
+npm install
+npm run start
+npm run test
+npm run start
+npm run cypress:open
+```
+Try the Full Experience! 🌟
+🚀 Create your own cosmic burger, swap ingredients “to make it tastier”, authenticate with a real email, place an order, and find it in your personal order history. You can even reset your password by receiving a code via email.
+
+Stellar Burgers is more than just a burger builder—it’s an interactive, futuristic experience! 💫🔥
+
+## **Author**  
+👨‍💻 **Developed by [Nikita Frolov](https://github.com/nkt-frlv)**  
+
+📩 **Contact me:**  
+- **GitHub:** [nkt-frlv](https://github.com/nkt-frlv)  
+- **LinkedIn:** [LinkedIn Profile](www.linkedin.com/in/nktfrlv)  
+- **Email:** [Letter me](nkt.frlv7@yandex.ru)  
+
